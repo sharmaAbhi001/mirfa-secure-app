@@ -1,2 +1,4 @@
 export { prisma as db } from "./client";
-export { Transaction } from "@prisma/client";
+
+import { Prisma } from "@prisma/client";
+export type Transaction = Prisma.TransactionClient;
