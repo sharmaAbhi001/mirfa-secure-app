@@ -14,6 +14,8 @@ import {
 
 const app = Fastify();
 
+const port = Number(process.env.PORT) || 3001;
+
 app.register(cors, { origin: true });
 
 /* ---------------- ENCRYPT ---------------- */
@@ -133,7 +135,7 @@ app.get("/records", async () => {
 
   return {
     total: records.length,
-    records: records.map((r) => ({
+    records: records.map((r:any) => ({
       id: r.id,
       partyId: r.partyId,
       createdAt: r.createdAt.toISOString(),
@@ -143,6 +145,4 @@ app.get("/records", async () => {
 
 /* ---------------- START SERVER ---------------- */
 
-app.listen({ port: 3001 }, () => {
-  console.log("API running on http://localhost:3001");
-});
+app.listen({ port, host: "0.0.0.0" });
