@@ -2,37 +2,64 @@
 
 # Dependencies
 node_modules
+.pnpm
+.pnpm-lock.yaml
+pnpm-lock.yaml
 .pnp
 .pnp.js
 
-# Local env files
+# Environment variables (NEVER COMMIT SECRETS)
 .env
 .env.local
+.env.*.local
 .env.development.local
 .env.test.local
 .env.production.local
+packages/db/.env
+apps/api/.env
+apps/web/.env
 
-# Testing
-coverage
+# Prisma
+.prisma/
 
-# Turbo
-.turbo
-
-# Vercel
-.vercel
-
-# Build Outputs
+# Build outputs
 .next/
 out/
 build
 dist
+.turbo
 
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
 
-# Debug
+# Testing
+coverage
+.nyc_output
+
+# Vercel
+.vercel
+
+# Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
 
 # Misc
-.DS_Store
 *.pem
+.cache
+
